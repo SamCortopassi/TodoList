@@ -31,7 +31,9 @@ class ViewController: UIViewController {
         guard let todo = itemTextField.text else {
             return
         }
+        if todo != "" {
         todoList.add(todo)
+            itemTextField.text = ""
         tableView.reloadData()
         }
         
@@ -39,3 +41,4 @@ class ViewController: UIViewController {
 
 
 
+}
