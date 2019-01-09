@@ -54,7 +54,7 @@
                     </view>
                     <connections>
                         <outlet property="itemTextField" destination="NP9-TU-l9R" id="H0s-cN-ny9"/>
-                        <outlet property="tableBiew" destination="9n2-eq-mGl" id="o3p-wo-t4c"/>
+                        <outlet property="tableView" destination="9n2-eq-mGl" id="o3p-wo-t4c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

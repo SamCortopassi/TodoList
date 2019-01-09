@@ -10,20 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var itemTextField: UITextField!
-    @IBOutlet var tableBiew: UITableView
+    @IBOutlet var tableView: UITableView!
+    
+    let todoList = TodoList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.dataSource = todoList
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func add ButtonPressed(_ sender: UIButton) {
-        print("add to-do item: \(itemTextField.text)")
+    @IBAction func addButtonPressed(_ sender: UIButton) {
+ //       print("add to-do item: \(itemTextField.text)")
+        guard let todo = itemTextField.text else {
+            return
+        }
+        todoList.add(todo)
+        tableView.reloadData()
+        }
+        
     }
 
-}
+
 
